@@ -7,6 +7,7 @@ import { HttpService } from './http.service';
 })
 export class OurApiComponent {
   animeList:any
+  name:String = 'NIME';
 
   constructor(private http : HttpService){
     this.http.getDataFromApi().subscribe((anime: any) =>{
@@ -15,5 +16,17 @@ export class OurApiComponent {
     })
   }
 
-  name:String = '';
+  test(name:any)
+  {
+    this.http.searchAnime(name).subscribe((anime: any) =>{
+      this.animeList = anime.data
+      console.log(this.animeList)
+    }) 
+  }
+
+  buttonClick()
+  {
+    this.test(this.name)
+  }
+
 }
