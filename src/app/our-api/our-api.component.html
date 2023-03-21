@@ -1,0 +1,13 @@
+<input type="search" placeholder="search">
+<button class="btn btn-success">Search</button>
+
+<section class="d-flex">
+    <div
+    *ngFor="let anime of animeList" class="card" style="width: 18rem;">
+    <img [src]="anime.images.jpg.image_url" class="card-img-top" alt="">
+    <div class="card-body">
+      <p class="card-text">{{anime.title}}</p>
+    </div>
+  </div></section>
+
+ 
